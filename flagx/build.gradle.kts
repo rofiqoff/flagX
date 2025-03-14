@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
 }
 
 kotlin {
@@ -71,16 +71,11 @@ kotlin {
 }
 
 android {
-    namespace = "org.rofiqoff.sample.flagx"
+    namespace = "org.rofiqoff.flagx"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 35
-
-        applicationId = "org.rofiqoff.flagx.androidApp"
-        versionCode = 1
-        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -90,27 +85,4 @@ android {
 dependencies {
     androidTestImplementation(libs.androidx.uitest.junit4)
     debugImplementation(libs.androidx.uitest.testManifest)
-}
-
-compose.desktop {
-    application {
-        mainClass = "MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "flagX"
-            packageVersion = "1.0.0"
-
-            linux {
-                iconFile.set(project.file("desktopAppIcons/LinuxIcon.png"))
-            }
-            windows {
-                iconFile.set(project.file("desktopAppIcons/WindowsIcon.ico"))
-            }
-            macOS {
-                iconFile.set(project.file("desktopAppIcons/MacosIcon.icns"))
-                bundleID = "org.rofiqoff.flagx.desktopApp"
-            }
-        }
-    }
 }
