@@ -7,7 +7,7 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 BASE_VERSION="1.0.0"
 
 # Determine version based on branch
-if [[ "$BRANCH" == "master" ]]; then
+if [[ "$BRANCH" == "main" ]]; then
     VERSION="$BASE_VERSION"
 elif [[ "$BRANCH" == "develop" ]]; then
     VERSION="$BASE_VERSION-beta.$(git rev-list --count HEAD)"
