@@ -26,14 +26,14 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Import GPG Key
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: |
-          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
-          echo "allow-preset-passphrase" >> ~/.gnupg/gpg-agent.conf
-          gpg --batch --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" --export-secret-keys > secret.asc
+#      - name: Import GPG Key
+#        env:
+#          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+#          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+#        run: |
+#          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+#          echo "allow-preset-passphrase" >> ~/.gnupg/gpg-agent.conf
+#          gpg --batch --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" --export-secret-keys > secret.asc
 
       - name: Set Version Based on Branch
         run: |
