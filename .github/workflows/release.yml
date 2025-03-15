@@ -57,7 +57,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ env.BASE_VERSION }}
-          name: Release ${{ env.BASE_VERSION }}
+          tag_name: v${{ env.VERSION }}
+          name: Release ${{ env.VERSION }}
           draft: false
           prerelease: false
