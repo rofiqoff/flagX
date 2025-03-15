@@ -41,7 +41,7 @@ jobs:
       - name: Set Version Based on Branch
         run: |
           chmod +x .github/workflows/versioning.sh
-          ./versioning.sh
+          ./.github/workflows/versioning.sh
 
 #      - name: Publish to Maven Central
 #        run: ./gradlew publish
