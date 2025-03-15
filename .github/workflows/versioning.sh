@@ -4,7 +4,7 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 # Base version (update manually for major releases)
-BASE_VERSION="1.0.0"
+BASE_VERSION="0.0.1"
 
 # Determine version based on branch
 if [[ "$BRANCH" == "main" ]]; then
