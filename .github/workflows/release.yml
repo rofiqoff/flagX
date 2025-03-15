@@ -40,7 +40,7 @@ jobs:
 
       - name: Set Version Based on Branch
         run: |
-          chmod +x versioning.sh
+          chmod +x .github/workflows/versioning.sh
           ./github/workflows/versioning.sh
 
 #      - name: Publish to Maven Central
