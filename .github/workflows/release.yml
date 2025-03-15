@@ -11,6 +11,9 @@ on:
       - develop
   workflow_dispatch:
 
+permissions:
+  contents: write  # Required to create a release
+
 jobs:
   publish:
     runs-on: ubuntu-latest
