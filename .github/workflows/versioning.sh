@@ -23,3 +23,6 @@ fi
 sed -i "s/VERSION_NAME=.*/VERSION_NAME=$VERSION/" gradle.properties
 
 echo "Updated version to: $VERSION"
+
+# Export the version as an environment variable
+echo "VERSION=$VERSION" >> $GITHUB_ENV
